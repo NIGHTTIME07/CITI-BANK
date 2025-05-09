@@ -19,6 +19,15 @@ body {
     width: 100%;
     top: 0;
     z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.main-header.scroll-down {
+    transform: translateY(-100%);
+}
+
+.main-header.scroll-up {
+    transform: translateY(0);
 }
 
 .top-nav {
