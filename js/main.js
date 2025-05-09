@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', function() {
     mobileNavToggle.innerHTML = '<i class="fas fa-bars"></i>';
     
     const navLinks = document.querySelector('.nav-links');
-    const header = document.querySelector('.main-header');
+    const topNav = document.querySelector('.top-nav');
     
-    if (header && navLinks) {
-        header.insertBefore(mobileNavToggle, navLinks);
+    if (topNav && navLinks) {
+        topNav.insertBefore(mobileNavToggle, navLinks);
         
         mobileNavToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
