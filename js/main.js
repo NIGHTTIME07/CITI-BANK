@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const navLinks = document.querySelector('.nav-links');
     const topNav = document.querySelector('.top-nav');
+    const mainHeader = document.querySelector('.main-header');
     
     if (topNav && navLinks) {
         topNav.insertBefore(mobileNavToggle, navLinks);
@@ -37,18 +38,18 @@ document.addEventListener('DOMContentLoaded', function() {
         const currentScroll = window.pageYOffset;
         
         if (currentScroll <= 0) {
-            header.classList.remove('scroll-up');
+            mainHeader.classList.remove('scroll-up');
             return;
         }
         
-        if (currentScroll > lastScroll && !header.classList.contains('scroll-down')) {
+        if (currentScroll > lastScroll && !mainHeader.classList.contains('scroll-down')) {
             // Scroll Down
-            header.classList.remove('scroll-up');
-            header.classList.add('scroll-down');
-        } else if (currentScroll < lastScroll && header.classList.contains('scroll-down')) {
+            mainHeader.classList.remove('scroll-up');
+            mainHeader.classList.add('scroll-down');
+        } else if (currentScroll < lastScroll && mainHeader.classList.contains('scroll-down')) {
             // Scroll Up
-            header.classList.remove('scroll-down');
-            header.classList.add('scroll-up');
+            mainHeader.classList.remove('scroll-down');
+            mainHeader.classList.add('scroll-up');
         }
         lastScroll = currentScroll;
     });
