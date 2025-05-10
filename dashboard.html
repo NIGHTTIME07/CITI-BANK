@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - Online Banking Platform</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="top-nav">
+            <div class="logo">
+                <img src="assets/citi-logo.png" alt="Bank Logo" class="bank-logo" />
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="#accounts" class="nav-link">Accounts</a>
+                <a href="#transfers" class="nav-link">Transfers</a>
+                <a href="#payments" class="nav-link">Payments</a>
+            </div>
+            <div class="user-menu">
+                <button class="btn btn-secondary" id="userMenuBtn">
+                    <i class="fas fa-user-circle"></i>
+                    <span>John Doe</span>
+                </button>
+                <div class="user-dropdown">
+                    <a href="#profile"><i class="fas fa-user"></i> Profile</a>
+                    <a href="#settings"><i class="fas fa-cog"></i> Settings</a>
+                    <a href="#security"><i class="fas fa-shield-alt"></i> Security</a>
+                    <a href="index.html" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="dashboard-container">
+        <aside class="dashboard-sidebar">
+            <nav class="sidebar-nav">
+                <a href="#overview" class="active"><i class="fas fa-home"></i> Overview</a>
+                <a href="#accounts"><i class="fas fa-wallet"></i> Accounts</a>
+                <a href="#transfers"><i class="fas fa-exchange-alt"></i> Transfers</a>
+                <a href="#payments"><i class="fas fa-credit-card"></i> Payments</a>
+                <a href="#statements"><i class="fas fa-file-alt"></i> Statements</a>
+                <a href="#support"><i class="fas fa-headset"></i> Support</a>
+            </nav>
+        </aside>
+
+        <div class="dashboard-content">
+            <section class="dashboard-header">
+                <h1>Welcome back, John</h1>
+                <div class="date-filter">
+                    <select id="dateRange">
+                        <option value="today">Today</option>
+                        <option value="week">This Week</option>
+                        <option value="month" selected>This Month</option>
+                        <option value="year">This Year</option>
+                    </select>
+                </div>
+            </section>
+
+            <section class="account-overview">
+                <div class="account-card primary">
+                    <div class="account-info">
+                        <h3>Main Checking</h3>
+                        <p class="account-number">****1234</p>
+                        <p class="balance">$12,345.67</p>
+                    </div>
+                    <div class="account-actions">
+                        <button class="btn btn-small"><i class="fas fa-exchange-alt"></i> Transfer</button>
+                        <button class="btn btn-small"><i class="fas fa-file-alt"></i> Statement</button>
+                    </div>
+                </div>
+
+                <div class="account-card savings">
+                    <div class="account-info">
+                        <h3>Savings</h3>
+                        <p class="account-number">****5678</p>
+                        <p class="balance">$45,678.90</p>
+                    </div>
+                    <div class="account-actions">
+                        <button class="btn btn-small"><i class="fas fa-exchange-alt"></i> Transfer</button>
+                        <button class="btn btn-small"><i class="fas fa-file-alt"></i> Statement</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quick-actions">
+                <h2>Quick Actions</h2>
+                <div class="action-grid">
+                    <button class="action-card">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Transfer Money</span>
+                    </button>
+                    <button class="action-card">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Pay Bills</span>
+                    </button>
+                    <button class="action-card">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>Mobile Deposit</span>
+                    </button>
+                    <button class="action-card">
+                        <i class="fas fa-file-invoice"></i>
+                        <span>View Statements</span>
+                    </button>
+                </div>
+            </section>
+
+            <section class="recent-transactions">
+                <h2>Recent Transactions</h2>
+                <div class="transactions-list">
+                    <div class="transaction-item">
+                        <div class="transaction-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="transaction-details">
+                            <h4>Grocery Store</h4>
+                            <p class="date">Today, 2:30 PM</p>
+                        </div>
+                        <div class="transaction-amount debit">
+                            -$85.50
+                        </div>
+                    </div>
+                    <div class="transaction-item">
+                        <div class="transaction-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div class="transaction-details">
+                            <h4>Salary Deposit</h4>
+                            <p class="date">Yesterday, 9:00 AM</p>
+                        </div>
+                        <div class="transaction-amount credit">
+                            +$3,500.00
+                        </div>
+                    </div>
+                    <!-- More transactions... -->
+                </div>
+                <button class="btn btn-secondary view-all">View All Transactions</button>
+            </section>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html> 
