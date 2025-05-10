@@ -33,26 +33,28 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Add scroll event listener for header
-    let lastScroll = 0;
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-        
-        if (currentScroll <= 0) {
-            mainHeader.classList.remove('scroll-up');
-            return;
-        }
-        
-        if (currentScroll > lastScroll && !mainHeader.classList.contains('scroll-down')) {
-            // Scroll Down
-            mainHeader.classList.remove('scroll-up');
-            mainHeader.classList.add('scroll-down');
-        } else if (currentScroll < lastScroll && mainHeader.classList.contains('scroll-down')) {
-            // Scroll Up
-            mainHeader.classList.remove('scroll-down');
-            mainHeader.classList.add('scroll-up');
-        }
-        lastScroll = currentScroll;
-    });
+    if (mainHeader) {
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll <= 0) {
+                mainHeader.classList.remove('scroll-up');
+                return;
+            }
+            
+            if (currentScroll > lastScroll && !mainHeader.classList.contains('scroll-down')) {
+                // Scroll Down
+                mainHeader.classList.remove('scroll-up');
+                mainHeader.classList.add('scroll-down');
+            } else if (currentScroll < lastScroll && mainHeader.classList.contains('scroll-down')) {
+                // Scroll Up
+                mainHeader.classList.remove('scroll-down');
+                mainHeader.classList.add('scroll-up');
+            }
+            lastScroll = currentScroll;
+        });
+    }
 
     // Add animation to feature cards on scroll
     const observerOptions = {
